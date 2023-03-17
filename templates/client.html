@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Click Away</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{{ url_for('static', filename='assets/img/favicon.ico') }}" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{{ url_for('static', filename='assets/vendor/aos/aos.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/glightbox/css/glightbox.min.css') }}" rel="stylesheet">
+  <link href="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.css') }}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{{ url_for('static', filename='assets/css/style.css') }}" rel="stylesheet">
+
+</head>
+
+<body>
+  <!-- ======= Header ======= -->
+  <header id="header">
+    <div class="d-flex flex-column">
+
+      <div class="profile">
+        <img src="{{ url_for('static', filename='assets/img/profile-img.jpg') }}" alt="" class="img-fluid rounded-circle">
+        <h1 class="text-light"><a href="">Click Away</a></h1>
+      </div>
+      <div class="usernameText">
+        <p>{{ "Logged In as " + username }}</p>
+      </div>
+
+      <nav id="navbar" class="nav-menu navbar">
+        <ul>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
+          <li><a href="#isc" class="nav-link scrollto"><i class="bx bx-user"></i> <span>ISC</span></a></li>
+          <li><a href="#library" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Library</span></a></li>
+          <li><a href="#acadblock" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Academic Blocks</span></a></li>
+          <li><a href="#sarc" class="nav-link scrollto"><i class="bx bx-server"></i> <span>SARC</span></a></li>
+          <li><a href="#office" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Office Hours</span></a></li>
+          <li><a href="#shuttle" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Shuttle Services</span></a></li>
+          <li><a href="#myrequests" class="nav-link scrollto"><i class="bx bx-server"></i> <span>My Requests</span></a></li>
+          <li><a href="/client/8" class="nav-link scrollto"><i class="bx bx-door-open"></i> <span>Logout</span></a></li>
+        </ul>
+      </nav><!-- .nav-menu -->
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container"  data-aos="fade-in">
+      <p>Book Slots for <span class="typed" data-typed-items=" ISC, Library DRs, SARC Rooms, Shuttle, Office Hours"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= ISC Section ======= -->
+    <section id="isc" class="isc">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>ISC</h2>
+          <p>Fill in the requirements below to book the desired slot.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Current Status:</h4>
+                <p></p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Point of Contact:</h4>
+                <p>amrishtony@snu.edu.in<br />ag657@snu.edu.in</p>
+              </div>
+
+              <iframe frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="/client/1" method="POST" role="form" id="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="area">Service Required:</label>
+                  <input type="text" name="area" class="form-control" id="area" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="cap">Capacity</label>
+                  <input type="number" class="form-control" name="capacity" id="cap" required>
+                </div>
+                  <div class="form-group col-md-6">
+                    <label for="date">Date:</label>
+                    <input type="date" name="onDate" class="form-control" id="date" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="time">Time</label>
+                    <input type="time" class="form-control" name="duration" id="time" required>
+                  </div>
+                </div>
+
+              <div class="form-group">
+                <label for="name">Reason for requirement</label>
+                <textarea class="form-control" name="message" rows="10" maxlength="200" required></textarea>
+              </div>
+
+              <div class="text-center"><button type="submit">Send Request</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End ISC Section -->
+
+    <!-- ======= Library Section ======= -->
+    <section id="library" class="library">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Library</h2>
+          <p>Fill in the requirements below to book the desired slot.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Current Status:</h4>
+                <p></p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Point of Contact:</h4>
+                <p>trdsharma@snu.edu.in<br />suhanishah@snu.edu.in</p>
+              </div>
+
+              <iframe frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="/client/2" method="post" role="form" id="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="roo">Service Required:</label>
+                  <input type="text" name="room" class="form-control" id="room" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="cap">Capacity</label>
+                  <input type="number" class="form-control" name="capacity" id="cap" required>
+                </div>
+                  <div class="form-group col-md-6">
+                    <label for="date">Date:</label>
+                    <input type="date" name="date" class="form-control" id="date" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="time">Time</label>
+                    <input type="time" class="form-control" name="time" id="time" required>
+                  </div>
+                </div>
+              <div class="form-group">
+                <label for="name">Reason for requirement</label>
+                <textarea class="form-control" name="message" rows="10" maxlength="200" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit">Send Request</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Library Section -->
+
+    <!-- ======= Acad Section ======= -->
+    <section id="acadblock" class="acadblock">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Academic Block</h2>
+          <p>Fill in the requirements below to book the desired slot.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Current Status:</h4>
+                <p></p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Point of Contact:</h4>
+                <p>balamanikandan@snu.edu.in<br />ag657@snu.edu.in</p>
+              </div>
+
+              <iframe frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="/client/3" method="post" role="form" id="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Service Required:</label>
+                  <input type="text" name="room" class="form-control" id="room" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Capacity</label>
+                  <input type="number" class="form-control" name="capacity" id="email" required>
+                </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Date:</label>
+                    <input type="date" name="date" class="form-control" id="room" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Time</label>
+                    <input type="time" class="form-control" name="time" id="email" required>
+                  </div>
+                </div>
+              <div class="form-group">
+                <label for="name">Reason for requirement</label>
+                <textarea class="form-control" name="message" rows="10" maxlength="200" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit">Send Request</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Acad Section -->
+
+    <!-- ======= Resume Section ======= -->
+    <section id="sarc" class="sarc">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>SARC</h2>
+          <p>Fill in the requirements below to book the desired slot.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Current Status:</h4>
+                <p></p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Point of Contact:</h4>
+                <p>amrishtony@snu.edu.in<br />ag657@snu.edu.in</p>
+              </div>
+
+              <iframe frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="/client/4" method="post" role="form" id="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Service Required:</label>
+                  <input type="text" name="room" class="form-control" id="room" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Capacity</label>
+                  <input type="number" class="form-control" name="capacity" id="email" required>
+                </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Date:</label>
+                    <input type="date" name="date" class="form-control" id="room" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Time</label>
+                    <input type="time" class="form-control" name="timme" id="email" required>
+                  </div>
+                </div>
+              <div class="form-group">
+                <label for="name">Reason for requirement</label>
+                <textarea class="form-control" name="message" rows="10" maxlength="200" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit">Send Request</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End SARC Section -->
+
+
+
+    <!-- ======= Office Section ======= -->
+    <section id="office" class="office">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Office Hours</h2>
+          <p>Fill in the requirements below to book the desired slot.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Current Status:</h4>
+                <p></p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Point of Contact:</h4>
+                <p>amrishtony@snu.edu.in<br />ag657@snu.edu.in</p>
+              </div>
+
+              <iframe frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="/client/5" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Required Faculty:</label>
+                  <input type="text" name="prof" class="form-control" id="room" required>
+                </div>
+
+                  <div class="form-group col-md-6">
+                    <label for="name">Date:</label>
+                    <input type="date" name="date" class="form-control" id="room" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Time</label>
+                    <input type="time" class="form-control" name="timmme" id="email" required>
+                  </div>
+                </div>
+
+              <div class="form-group">
+                <label for="name">Reason for requirement</label>
+                <textarea class="form-control" name="message" rows="10" maxlength="200" required></textarea>
+              </div>
+              <div class="text-center"><button type="submit">Send Request</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Office Hours Section -->
+
+    <section id="shuttle" class="shuttle">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Shuttle Services</h2>
+          <p>Fill in the requirements below to book the desired slot.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Current Status:</h4>
+                <p></p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Point of Contact:</h4>
+                <p>amrishtony@snu.edu.in<br />ag657@snu.edu.in</p>
+              </div>
+
+              <iframe frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form action="/client/6" method="post" role="form" id="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="room">Service Required:</label>
+                  <input type="text" name="route" class="form-control" id="room" required>
+                </div>
+
+                  <div class="form-group col-md-6">
+                    <label for="name">Date:</label>
+                    <input type="date" name="date" class="form-control" id="date" required>
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="name">Time</label>
+                    <input type="time" class="form-control" name="time" id="email" required>
+                  </div>
+                </div>
+              <div class="form-group">
+                <label for="name">Reason for requirement</label>
+                <textarea class="form-control" name="message" rows="10" maxlength="200" required></textarea>
+              </div>
+
+              <div class="text-center"><button type="submit">Send Request</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Shuttle Section -->
+    <section id="myrequests" class="shuttle">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>My Requests</h2>
+        </div>
+
+        <div>
+          <table class="table table-striped" style="table-layout:fixed; width:100%">
+            <tr>
+              <th scope="col" style="width:33%">Request</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Status</th>
+            </tr>
+            {% for request in requestsISC %}
+              <tr>
+                <td style="word-wrap:break-word">{{"ISC "+ request.area +" for "+ request.capacity|string +" people"}}</td>
+                <td>{{request.date}}</td>
+                <td>{{request.time}}</td>
+                <td>{{request.status}}</td>
+              </tr>
+            {% endfor %}
+            {% for request in requestsLib %}
+              <tr>
+                <td style="word-wrap:break-word">{{"Library Room "+ request.room +" for "+ request.capacity|string +" people"}}</td>
+                <td>{{request.date}}</td>
+                <td>{{request.time}}</td>
+                <td>{{request.status}}</td>
+              </tr>
+            {% endfor %}
+            {% for request in requestsAcad %}
+              <tr>
+                <td style="word-wrap:break-word">{{"Academic Block Room "+ request.area +" for "+ request.capacity|string +" people"}}</td>
+                <td>{{request.date}}</td>
+                <td>{{request.time}}</td>
+                <td>{{request.status}}</td>
+              </tr>
+            {% endfor %}
+            {% for request in requestsSarc %}
+              <tr>
+                <td style="word-wrap:break-word">{{"SARC "+ request.area +" for "+ request.capacity|string +" people"}}</td>
+                <td>{{request.date}}</td>
+                <td>{{request.time}}</td>
+                <td>{{request.status}}</td>
+              </tr>
+            {% endfor %}
+            {% for request in requestsOffice %}
+              <tr>
+                <td style="word-wrap:break-word">{{"Office Hours with "+str(request.faculty)}}</td>
+                <td>{{request.date}}</td>
+                <td>{{request.time}}</td>
+                <td>{{request.status}}</td>
+              </tr>
+            {% endfor %}
+            {% for request in requestsShuttle %}
+              <tr>
+                <td>{{"Shuttle "+str(request.route)}}</td>
+                <td>{{request.date}}</td>
+                <td>{{request.time}}</td>
+                <td>{{request.status}}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      </div>
+    </section>
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>DA.BAM Team</span></strong>
+      </div>
+      <div class="credits">
+      </div>
+    </div>
+  </footer><!-- End  Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{{ url_for('static', filename='assets/vendor/purecounter/purecounter_vanilla.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/aos/aos.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/glightbox/js/glightbox.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/isotope-layout/isotope.pkgd.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/swiper/swiper-bundle.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/typed.js/typed.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/waypoints/noframework.waypoints.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/vendor/php-email-form/validate.js') }}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+</body>
+
+</html>
